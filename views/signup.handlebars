@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>Uber</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main_page.css">
+    <link href='static/css/simplesidebar.css' rel='stylesheet' type='text/css'>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+<div class="nav navbar navbar-default navbar-fixed-top">
+    <a href="/"><h1>Welcom To Uber Membership!</h1></a>
+</div>
+    <h1><span class="fa fa-sign-in"></span>SIGNUP</h1>
+        {{#data}}
+    <!--LOGIN FORM -->
+    <form action="/signup" name="signup" method="POST">
+        <h2>Register</h2>
+       <div class="form-group">
+            <label>username</label>
+            <input type="text" class="form-control"  name="username" value="{{username}}">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" value="{{password}}">
+            <label>Cofirm_passord</label>
+            <input type="password" class="form-control" name="confirm_password" value="{{confirm_password}}"><br>
+            {{#if message}}
+            <p>{{message}}</p>
+            {{/if}}
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" value="{{name}}">
+            <label>SurName</label>
+            <input type="text" class="form-control" name="surname" value="{{surname}}">
+            <label>Lincence Number</label>
+            <input type="" class="form-control" name="lincence_number" value="{{lincence_number}}">
+            <label>Cell Number</label>
+            <input type="number" class="form-control" name="cell_number" value="{{cell_number}}">
+            <label>Registration Number</label>
+            <input type="text" class="form-control" name="registration_number" value="{{registration_number}}">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+    </form>
+        {{/data}}
+            <hr>
+                <p>Or go <a href="logout"><strong>Logout</strong></a></p>
+                <p>Or go <a href="login">Login</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

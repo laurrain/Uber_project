@@ -1,0 +1,121 @@
+a {
+	text-decoration: none;
+<<<<<<< HEAD
+	margin: 0;
+	padding: 0;
+	color: rgb(133,0,0);
+=======
+	clear: none;
+	margin: 0;
+	padding: 0;
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc
+}
+
+a:hover {
+	text-decoration: none
+}
+
+h1 {
+	text-align: center;
+	font: 4em Courier, "Comic Sans MS", Georgia, sans-serif;
+	font-weight: bolder;
+}
+
+h3 {
+	text-align: center;
+<<<<<<< HEAD
+	padding: 5em 0 0 0;
+	margin: 0;
+=======
+	padding-top: 5em 
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc
+}
+
+h2 {
+	text-align: center;
+<<<<<<< HEAD
+	font-size: 2.5em
+}
+
+.navbar-fixed-top {
+	position: relative;
+	padding: 0;
+	margin: 0;
+
+}
+
+
+.main-container {
+	padding:0 0 5em 0;
+	margin: 0 auto;
+=======
+	font-size: 5em
+}
+
+.main-container {
+	padding-top: 9em;
+	padding-bottom: 5em;
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc
+}
+
+body {
+	background-color: rgb(150,200,255);
+}
+
+<<<<<<< HEAD
+=======
+.btn-container {
+}
+
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc
+table {
+	background-color: white;
+}
+
+<<<<<<< HEAD
+=======
+.row > button {
+	margin: 0.5em 0em auto 0em;
+	text-align: center;
+	height: 4em;
+}
+
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc
+.row {
+	margin: 0 auto;
+}
+
+.col-md-2 > a {
+	color: white;
+	font-weight: bolder;
+}
+
+footer {
+	text-align: center;
+	margin: 0 0 20em 0;
+	color: white;
+	font-weight: bolder;
+	background-color: rgba(100, 10, 10, 200);
+	border: 2px solid black;
+
+}
+
+.footer-right > div {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-left > div {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+tr > td {
+	width: 33%;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> fafffc0177323eee9be914c915a73e4f157d8ecc

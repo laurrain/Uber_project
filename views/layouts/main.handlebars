@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Uber</title>
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="static/css/main_page.css">
+		<link href='static/css/simplesidebar.css' rel='stylesheet' type='text/css'>
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="nav navbar navbar-default navbar-fixed-top">
+			
+			<form class="text-center" action="/logout" method="get">
+  				<button type="submit" class="btn btn-warning btn-lg navbar-left"><strong>LogOut</strong></button>
+			</form>
+			
+			<a href="/"><h1 align="center">UBER</h1></a>
+		</div>
+	<div align="center">
+      <button  onclick="location.href='/driver/{{username}}'" class="col-xs-4">
+          General Request Platform
+       </button>
+       <button  onclick="location.href='/appointment'" class="col-xs-4">
+          Make An Appointment
+       </button>
+       <button  onclick="location.href='/agent'" class="col-xs-4">
+          Agent View
+       </button>
+	</div>
+
+			{{{body}}}
+
+		<!-- main-container ends here -->
+	<footer class="navbar-fixed-bottom">
+		<div class="footer-right">
+			<div class="col-xs-1 developers"><a href="/#">developers</a></div>
+			<div class="col-xs-1 copyright"><a href="/#">copyright</a></div>
+			<div class="col-xs-1 disclaimer"><a href="/#">disclaimer</a></div>
+		</div>
+
+		<div class="footer-left">
+			<div class="col-xs-2">Powered by <a href="http://www.projectcodex.co">CodeX</a></div>
+		</div>
+	</footer>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var socket = io();
+  $('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+  socket.on('chat message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+  });
+</script>
+</body>
+
+
+
+</html>
