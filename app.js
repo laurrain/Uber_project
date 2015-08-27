@@ -113,7 +113,7 @@ app.get("/*", function(req, res){
 })
 */
 
-var port = process.env.PORT || 5000;
+var port = process.env.CITY_CODERS_PORT || 5000;
 
 var server = http.listen(port, function(){
 
