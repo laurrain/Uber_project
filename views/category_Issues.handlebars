@@ -1,0 +1,138 @@
+<DOCTYPE html>
+<html lang = "en">
+<head>
+<title>
+
+</title>
+<style> 
+body{
+  background-color: #4e5d6a;
+  font-family: "Open Sans", sans-serif;
+}
+
+.message{
+  color: #eb3a2e;
+}
+
+.container{
+  max-width: 640px;
+  margin: 5% auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #222;
+}
+
+.text-center{
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* Form CSS*/
+
+form{
+  padding: 15px;
+}
+
+label{
+  display: block;
+  margin-top: 10px;
+}
+
+input,textarea{
+  display:block;
+  margin: 10px 0;
+  font-size: 1.2em;
+  outline: 0;
+  background-color: #aacce9;
+  border: 3px solid #4e5d6a;
+  width: 50%;
+  padding: 5px;
+}
+
+input:focus, textarea:focus{
+  transition: .5s ease-in-out;
+  -webkit-transform: scale(1.05);
+  border-color: #aacce9;
+  background-color: #fff;
+}
+
+button{
+  font-size: 1em;
+  padding: 10px;
+  background-color: #aacce9;
+  color: #fff;
+  border: 1px solid #4e5d6a;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 0 #4e5d6a;
+  outline: 0;
+  box-shadow: 0;
+  display: block;
+}
+
+button:hover{
+  transition: .75s ease-in-out;
+  background-color: #90adc6;
+}
+logo{ http://www.saintpetersblog.com/wp-content/uploads/2015/03/uber_seo_car.jpg
+
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="container">
+
+  <h1>Category Issues</h1>
+<div>
+  <h2> Lost Items</h2>
+  <h3> AGENT 1</h3>
+</div>
+
+</div>
+
+<script>
+  
+
+  $('form').on('submit',function(){
+  $(this).find('.message').remove();
+  //  get each form input for validation
+
+  var name = $('#name').val().trim(),
+      email = $('#email').val().trim(),
+      comments = $('#comments').val().trim();
+
+  //  check for empty fields
+
+  if (name === ""){
+    $('#name')
+      .focus()
+      .after('<span class="message">Please fill in your name!</span>');
+  }
+  else if (email === ""){
+    $('#email').focus().after('<span class="message">Please fill in your email!</span>');
+  }
+  else if (comments === ""){
+    $('#comments').focus().after('<span class="message">Please add comments!</span>');
+  }
+  // Test AJAX
+  else{
+    $.ajax({
+      success: function(){
+        $('form').hide();
+        $('.container').empty().append("<h2 class='text-center'>Information has been sent. Thank you!</h2><h3 class='text-center'>Please reload to start over</h3>");
+      }
+    });
+  }
+  return false; // prevent form from submitting
+});
+
+</script>
+</body>
+
+</html>

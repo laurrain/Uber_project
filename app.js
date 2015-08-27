@@ -7,19 +7,19 @@ var express = require('express'),
     io = require('socket.io')(http),
     exphbs  = require('express-handlebars'),
     mysql = require('mysql'), 
-    myConnection = require('express-myconnection'),  
+   // myConnection = require('express-myconnection'),  
     session = require('express-session'),
     route = require('./routes/route')
     
 var user = {};
 
-var dbOptions = {
+/*var dbOptions = {
       host: 'localhost',
       user: 'root',
       password: '42926238',
       port: 3306,
       database: 'uber_Driver'
-};
+};*/
 
 app.engine("handlebars", exphbs({defaultLayout:"main"}))
 app.set("view engine", "handlebars")
@@ -29,7 +29,7 @@ app.use(express.static('public'));
 app.use("/static", express.static("."))
 
 //setup middleware
-app.use(myConnection(mysql, dbOptions, 'single'));
+//app.use(myConnection(mysql, dbOptions, 'single'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
