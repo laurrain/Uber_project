@@ -112,11 +112,17 @@ app.get("/*", function(req, res){
   res.render("home");
 })
 */
+var portNr = process.env.City_Coders_PORT || 3000;
+//var port = process.env.PORT || 5000;
 
-var port = process.env.PORT || 5000;
+app.listen(portNr, function(){
+  console.log("app started. port:3000")
+});
 
-var server = http.listen(port, function(){
 
-  console.log("server is running on " + server.address().address + ":" +server.address().port)
 
-})
+//var server = http.listen(port, function(){
+
+  //console.log("server is running on " + server.address().address + ":" +server.address().port)
+
+//})
