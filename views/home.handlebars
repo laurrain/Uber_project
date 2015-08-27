@@ -2,13 +2,20 @@
 <html lang="en">
 <style>
     body{
-                background-image: url("./header.jpg");
+                background-image: url("./background.jpg");
+                font-color:blue;
                 background-repeat: no-repeat;
                 background-size: 100%;
                 height: 220px;
                 width: auto;
-                opacity: 0.89;
+                
+            }#cat{
+                color:blue;
+            }#text{
+                color:blue;
+
             }
+    
 
 </style>
 
@@ -40,7 +47,19 @@
 <body>
 
     <div id="wrapper">
-
+            <a href="/"><h1 align="center">UBER</h1></a>
+        </div>
+    <div align="center">
+      <button  onclick="location.href='/index/{{username}}'" class="col-xs-4">
+          General Request Platform
+       </button>
+       <button  onclick="location.href='/appointment'" class="col-xs-4">
+          Make An Appointment
+       </button>
+       <button  onclick="location.href='/agent'" class="col-xs-4">
+          Agent View
+       </button>
+    </div>
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -50,24 +69,30 @@
                     </a>
                 </li>
                  <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#cat"><i class="fa fa-fw fa-arrows-v"></i>Categorised Issues<i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#cat"><i class="fa fa-fw fa-arrows-v"></i><strong>Categorised Issues</strong><i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="cat" class="collapse">
                             <li>
-                                <a id = "text" href="/category_Issues">Lost Iterms</a>
+                                <a id = "text" href="/category_Issues"><strong>Lost Items</strong></a>
                             </li>
                             <li>
-                                <a id = "text" href="/category_Issues">General Queries</a>
+                                <a id = "text"font-color="red" href="/category_Issues"><strong>General Queries</strong></a>
                             </li>
                             <li>
-                                <a id ="text"  href="/signup">Registration</a>
+                                <a id ="text"  href="/signup"><strong>Registration</strong></a>
                             </li>
+
+                            <li>
+                                <a id ="text"  href="/index"><strong>General Request Platform</strong></a>
+                            </li>
+                            
+
                             
                              </ul>
                              <li>
-                                <a href="http://www.Uber.com/">About</a>
+                                <a href="http://www.Uber.com/"><strong>About</strong></a>
                             </li>
                             <li>
-                                <a id ="text"  href="/login">Login Here</a>
+                                <a id ="text"  href="/login"><strong>Login Here</strong></a>
                             </li>
                      </div>
         <!-- /#sidebar-wrapper -->

@@ -2,7 +2,7 @@
 <html lang="en">
 <style>
     body{
-                background-image: url("http://diginomica.com/wp-content/uploads/2015/01/o-UBER-facebook.jpg");
+                background-image: url("./background.jpg");
                 background-repeat: no-repeat;
                 background-size: 100%;
                 height: 220px;
@@ -38,7 +38,19 @@
 </head>
 
 <body>
-
+        <a href="/"><h1 align="center">UBER</h1></a>
+        </div>
+    <div align="center">
+      <button  onclick="location.href=/index" class="col-xs-4">
+          General Request Platform
+       </button>
+       <button  onclick="location.href='/appointment'" class="col-xs-4">
+          Make An Appointment
+       </button>
+       <button  onclick="location.href='/agent'" class="col-xs-4">
+          Agent View
+       </button>
+    </div>
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -53,10 +65,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#cat"><i class="fa fa-fw fa-arrows-v"></i>Categorised Issues<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="cat" class="collapse">
                             <li>
-                                <a id = "text" href="/category_Issues">Lost Iterms</a>
+                                <a id = "text" href="/category_Issues"><strong>Lost Iterms</strong></a>
                             </li>
                             <li>
-                                <a id = "text" href="/category_Issues">General Queries</a>
+                                <a id = "text" href="/category_Issues"><strong>General Queries</strong></a>
                             </li>
                             <li>
                                 <a id ="text"  href="/signup">Registration</a>
@@ -65,6 +77,11 @@
                              <li>
                                 <a href="http://www.Uber.com/">About</a>
                             </li>
+                            <li>
+                                <a href="/index">General Request Platform</a>
+                            </li>
+
+
                      </div>
         <!-- /#sidebar-wrapper -->
 

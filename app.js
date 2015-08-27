@@ -124,11 +124,10 @@ app.get("/*", function(req, res){
 var port = process.env.CITY_CODERS_PORT || 5000;
 
 
-//var server = http.listen(port, function(){
+var server = http.listen(port, function(){
 
-  //console.log("server is running on " + server.address().address + ":" +server.address().port)
+  console.log("server is running on " + server.address().address + ":" +server.address().port)
 
-
-//})
+});
 
 
