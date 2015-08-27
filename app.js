@@ -85,10 +85,20 @@ app.get('/appointment', function(req, res){
 app.get('/agent', function(req, res){
   res.render('agent')
 })
+
+app.get('/home', function(req, res){
+  //
+  res.render('home');
+});
+
+
+
+/*
 app.get("/*", function(req, res){  
 
   res.render("home");
 })
+*/
 
 var port = process.env.PORT || 5000;
 
