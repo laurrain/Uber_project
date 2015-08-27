@@ -120,9 +120,17 @@ app.listen(portNr, function(){
 });
 
 
+<<<<<<< HEAD
+=======
+var port = process.env.CITY_CODERS_PORT || 5000;
+>>>>>>> 76654b5a69be11b8e586da0e67704f603423bed4
 
 //var server = http.listen(port, function(){
 
   //console.log("server is running on " + server.address().address + ":" +server.address().port)
 
+<<<<<<< HEAD
 //})
+=======
+})
+>>>>>>> 76654b5a69be11b8e586da0e67704f603423bed4
