@@ -3,12 +3,20 @@
 <head>
     <style>
     
-    .register .button:hover {
+    body {
   background: #51DB1C;
   background: -webkit-linear-gradient(#51DB1C, #6BA061);
   background: -moz-linear-gradient(#51DB1C, #6BA061);
   background: -o-linear-gradient(#51DB1C, #6BA061);
   background: linear-gradient(#51db1c, #6ba061);
+}
+#state{
+    background-color: #00FFFF;
+    font: #00FF00;
+    opacity: 0.71;
+}
+#words{
+    font-color: #00FF00;
 }
 
     </style>
@@ -32,16 +40,20 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 <div class="nav navbar navbar-default navbar-fixed-top">
-    <a href="/"><h1>Welcom To Uber Membership!</h1></a>
+    <a href="/signup"><h1>Welcome To Uber Membership!</h1></a>
 </div>
     <h1><span class="fa fa-sign-in"></span>SIGNUP</h1>
         {{#data}}
     <!--LOGIN FORM -->
+    <div id ="state">
     <form action="/signup" name="signup" method="POST">
         <h2>Register</h2>
+    
        <div class="form-group">
+        <div class="words">
             <label>username</label>
-            <input type="text" class="form-control"  name="username" value="{{username}}">
+            </div>
+            <input type="text" class="form-control"  name="username" value="{{username}}"> 
             <label>Password</label>
             <input type="password" class="form-control" name="password" value="{{password}}">
             <label>Cofirm_passord</label>
@@ -60,7 +72,7 @@
             <label>Registration Number</label>
             <input type="text" class="form-control" name="registration_number" value="{{registration_number}}">
         </div>
-
+        
         <button type="submit" class="btn btn-warning btn-lg">Submit</button>
     </form>
         {{/data}}
@@ -69,7 +81,7 @@
                 <p>Or go <a href="login">Login</a></p>
 
 </div>
-
+</div>
 </div>
 </body>
 </html>

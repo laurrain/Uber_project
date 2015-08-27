@@ -112,25 +112,23 @@ app.get("/*", function(req, res){
   res.render("home");
 })
 */
-var portNr = process.env.City_Coders_PORT || 3000;
+//var portNr = process.env.City_Coders_PORT || 3000;
 //var port = process.env.PORT || 5000;
 
-app.listen(portNr, function(){
-  console.log("app started. port:3000")
-});
+//app.listen(portNr, function(){
+ // console.log("app started. port:3000")
+//});
 
 
-<<<<<<< HEAD
-=======
+
 var port = process.env.CITY_CODERS_PORT || 5000;
->>>>>>> 76654b5a69be11b8e586da0e67704f603423bed4
+
 
 //var server = http.listen(port, function(){
 
   //console.log("server is running on " + server.address().address + ":" +server.address().port)
 
-<<<<<<< HEAD
+
 //})
-=======
-})
->>>>>>> 76654b5a69be11b8e586da0e67704f603423bed4
+
+
