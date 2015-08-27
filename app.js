@@ -80,17 +80,30 @@ app.get('/index', function(req, res){
 });
 app.get('/appointment', function(req, res){
   res.render('appointment', {layout: false})
-})
+});
 
 app.get('/agent', function(req, res){
   res.render('agent')
-})
+});
 
 app.get('/home', function(req, res){
   //
   res.render('home');
 });
 
+app.get('/category_Issues', function(req, res){
+  res.render('category_Issues');
+});
+
+app.get('/category_Issue', function(req, res){
+  res.render('category_Issue');
+});
+
+
+
+app.get('/signup', function(req, res){
+  res.render('signup');
+});
 
 
 /*
