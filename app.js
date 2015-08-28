@@ -95,8 +95,12 @@ app.get('/category_Issues', function(req, res){
   res.render('category_Issues');
 });
 
-app.get('/category_Issue', function(req, res){
-  res.render('category_Issue');
+app.get('/driver_handler', function(req, res){
+  res.render('driver_handler');
+});
+
+app.get('/UberRating', function(req, res){
+  res.render('UberRating');
 });
 
 

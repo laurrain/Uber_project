@@ -9,7 +9,7 @@
                 height: 220px;
                 width: auto;
                 
-            }#cat{
+            }#collapse{
                 color:blue;
             }#text{
                 color:blue;
@@ -46,7 +46,7 @@
 
 <body>
 
-    <div id="wrapper">
+    <!---<div id="wrapper">
             <a href="/"><h1 align="center">UBER</h1></a>
         </div>
     <div align="center">
@@ -59,7 +59,7 @@
        <button  onclick="location.href='/agent'" class="col-xs-4">
           Agent View
        </button>
-    </div>
+    </div>-->
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -75,7 +75,7 @@
                                 <a id = "text" href="/category_Issues"><strong>Lost Items</strong></a>
                             </li>
                             <li>
-                                <a id = "text"font-color="red" href="/category_Issues"><strong>General Queries</strong></a>
+                                <a id = "text"font-color="red" href="/driver_handler"><strong>General Queries</strong></a>
                             </li>
                             <li>
                                 <a id ="text"  href="/signup"><strong>Registration</strong></a>
@@ -85,11 +85,14 @@
                                 <a id ="text"  href="/index"><strong>General Request Platform</strong></a>
                             </li>
                             
-
+                            <li>
+                                <a id ="text"  href="/UberRating"><strong>Please Rate Our Service</strong></a>
+                            </li>
+                            
                             
                              </ul>
                              <li>
-                                <a href="http://www.Uber.com/"><strong>About</strong></a>
+                                <a  id ="text"href="http://www.Uber.com/"><strong>About</strong></a>
                             </li>
                             <li>
                                 <a id ="text"  href="/login"><strong>Login Here</strong></a>
@@ -104,22 +107,22 @@
                     <div class="col-lg-12">
                          <h1 align="center">Welcome To UBER</h1>
 
-<div class="container">
+<!--<div class="container">
     
     <div class="row">
         <div>
-            <!--img class="col-xs-4" src=""-->
+            <img class="col-xs-4" src="">
         </div>
 
         <div class="col-xs-4"> </div>
         
         <div>
-            <!--img class="col-xs-4" src=""-->
+            <img class="col-xs-4" src="">
         </div>
     </div>
-</div>
+</div>-->
 
-<h3 align="center">Uber MemberShip </h3>
+<h3 align="center"></h3>
                         
                        
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
@@ -129,6 +132,11 @@
         </div>
         
         <!-- /#page-content-wrapper -->
+        <div container="class theme-showcase" role="main">
+                                <strong>{{{body}}}</strong>
+                            </div>
+
+        
         
     </div>
     <!-- /#wrapper -->
@@ -150,5 +158,4 @@
 </body>
 
 </html>
-
 
