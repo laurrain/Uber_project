@@ -99,6 +99,12 @@ app.get('/driver_handler', function(req, res){
   res.render('driver_handler');
 });
 
+app.get('/appointment', function(req, res){
+  res.render('appointment');
+});
+
+
+
 app.get('/UberRating', function(req, res){
   res.render('UberRating');
 });
