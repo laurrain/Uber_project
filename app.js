@@ -36,16 +36,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(session({secret: "yada yada", saveUninitialized : false, resave: true, cookie : {maxAge : 5*60000}}));
 
-app.get("/", function(req, res){  
+app.get("/", route.checkUser, function(req, res){  
 
-  res.render("home",{layout: false});
+  res.render("home",{administrator : administrator});
 })
 
 app.get("/login", function(req, res){
   res.render("login", {layout : false});
 })
 
-app.post('/login', route.authDriver)
+app.post('/login',route.authDriver)
 
 app.get("/logout", function(req, res){
   delete req.session.user;
@@ -65,26 +65,64 @@ app.get('/index', function(req, res){
   res.render('index', {data: route, layout: false, username : req.session.user})
   console.log("voila...")
 
-  io.on('connection', function(socket){
-    console.log('a user connected'+ " " +req.session.user);
-    socket.emit('connected');
-      socket.on('disconnect', function(msg){
-        console.log('user disconnected');
-        socket.emit('disconnected');
-    });
-    socket.on('chat message', function(msg){
-    console.log('message: ');
-    io.emit('chat message',req.session.user+ " " +msg);
-    });
+var drivers_waiting = [];
+var conversations = {};
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.emit('connected');
+    socket.on('disconnect', function(msg){
+      console.log('user disconnected');
+      socket.emit('disconnected');
   });
+  socket.on('chat message', function(msg){
+    console.log('message: ');
+    io.emit('chat message',"Attilaz"+" " +msg);
+  });
+  socket.on('driver-waiting', function (message) {
+    console.log('new driver waiting');
+    drivers_waiting.push({name: message.driverName, sock: socket});
+    console.log("driver-waiting"+drivers_waiting.length);
+  });
+
+  socket.on('agent-ready', function (message) {
+    console.log('agent-ready');
+    var driver = drivers_waiting.shift();
+    conversations['agent-ready' + message.agentName] = driver.sock;
+    conversations['driver-waiting' + driver.name] = socket;
+    console.log("driver-waiting"+drivers_waiting.length);
+    console.log("conversations"+conversations);
+  });
+
+  socket.on('query message', function(msg){
+    console.log('message: ');
+    io.emit('query message', msg.message);
+  });
+
+  socket.on('how many drivers', function(msg){
+    console.log('message: ');
+    socket.emit('how many drivers', drivers_waiting.length);
+  });
+
 });
-app.get('/appointment', function(req, res){
-  res.render('appointment', {layout: false})
-})
+});
+
+/*app.get('/appointment', function(req, res){
+  var data = require('./routes/route')
+  res.render('appointment', {route: data,layout: false})
+})*/
 
 app.get('/agent', function(req, res){
-  res.render('agent')
+  res.render('agent', {layout: false})
 })
+
+app.get('/Appointment/edit_appointment/:id', route.get_appointment); 
+
+app.post('/Appointment/email_And_Comment/:id', route.email_And_Comment);
+  
+
+
 app.get("/*", function(req, res){  
 
   res.render("home");

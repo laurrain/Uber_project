@@ -1,12 +1,16 @@
 <div class="container">
-
-  <h2>Make an Appointment</h2>
-  <form method="GET">
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email">
-    <label for="comments">Subject:</label>
-    <textarea name="comments" id="comments" cols="25" rows="5"></textarea>
-    <input type="submit" onclick="location.href='/agent'">
-  </form>
-
+  <table> 
+    <h2>Agent Received Driver Appointment</h2>
+    <thead>
+    <tr>
+      <th>Name</th><th>Driver e-mail</th><th>Comment</th><th>Date</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>{{agent}}</td>
+      <td>{{email}}</td>
+      <td>{{comment}}</td>
+      <td>{{date}}</td>
+    </tr>
+  </table>
 </div>

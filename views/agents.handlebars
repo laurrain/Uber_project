@@ -22,15 +22,21 @@
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   var socket = io();
-  socket.emit('driver-waiting', { driverName: 'kelvin'});
+  socket.emit('agent-ready', { agentName: 'kelvin'});
   $('form').submit(function(){
-    socket.emit('query message', { name: 'driver-kelvin', message: $('#m').val()});
+    socket.emit('query message', {name: 'agent-kelvin', message: $('#m').val()});
     $('#m').val('');
     return false;
   });
   socket.on('query message', function(msg){
     $('#messages').append($('<li>').text(msg));
   });
+
+  socket.on('how many drivers', function(msg){
+    $('#driverQueue').text(msg);
+  });
+
+  interval(function () { socket.emit('how many drivers'); }, 30000);
 </script>
   </body>
 </html>
