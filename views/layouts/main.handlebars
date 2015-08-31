@@ -7,33 +7,29 @@
 		<link href='static/css/simplesidebar.css' rel='stylesheet' type='text/css'>
 		<script src="static/js/jquery.min.js"></script>
 		<script src="static/js/bootstrap.min.js"></script>
-	</head>
+</head>
 	<body>
-		<div class="nav navbar navbar-default navbar-fixed-top">
-			
-			<a href="/"><h1 align="center">UBER</h1></a>
-		</div>
 	<div align="center">
-      <button  onclick="location.href='/index/'" class="col-xs-4">
+      <button  onclick="location.href='/index'" class="col-xs-4">
           General Request Platform
        </button>
-       <button  onclick="location.href='/Appointment/edit_appointment/1'" class="col-xs-4">
+       <button  onclick="location.href='/add_appointment'" class="col-xs-4">
           Make An Appointment
        </button>
-       <button  onclick="location.href='/Agents/{{name}}'" class="col-xs-4">
-          Agent View
+       <button  onclick="location.href='/add_rating'" class="col-xs-4">
+          Please Rate our Service
+       </button>
+       <button  onclick="location.href='/direct'" class="col-xs-4">
+          Items Lost
+       </button>
+        <button  onclick="location.href='/direct'" class="col-xs-4">
+          Register
        </button>
 	</div>
 
 			{{{body}}}
 
 		<!-- main-container ends here -->
-	
-
-		<div class="footer-left">
-			<div class="col-xs-2">Powered by <a href="http://www.projectcodex.co">CodeX</a></div>
-		</div>
-	</footer>
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
@@ -49,6 +45,11 @@
     $('#messages').append($('<li>').text(msg));
   });
 </script>
+
+    <div class="footer-left">
+      <div class="col-xs-2">Powered by <a href="http://www.projectcodex.co">CodeX</a></div>
+    </div>
+  </footer>
 </body>
 
 

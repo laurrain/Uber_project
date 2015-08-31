@@ -108,18 +108,18 @@ io.on('connection', function(socket){
 });
 });
 
-/*app.get('/appointment', function(req, res){
-  var data = require('./routes/route')
-  res.render('appointment', {route: data,layout: false})
-})*/
 
-app.get('/agent', function(req, res){
-  res.render('agent', {layout: false})
+app.get('/add_appointment', function(req, res){
+  res.render('add_appointment', {layout: false})
 })
 
-app.get('/Appointment/edit_appointment/:id', route.get_appointment); 
+app.post('/Appointment/email_And_Comment', route.email_And_Rating);
 
-app.post('/Appointment/email_And_Comment/:id', route.email_And_Comment);
+app.get('/add_rating', function(req, res){
+  res.render('add_rating', {layout: false})
+})
+
+app.post('/Appointment/email_And_Comment', route.email_And_Comment);
   
 
 

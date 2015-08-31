@@ -166,6 +166,34 @@ exports.email_And_Comment = function (req, res, next) {
     
 };
 
+exports.email_And_Rating = function (req, res, next) {
+    var data = JSON.parse(JSON.stringify(req.body));
+    var id = req.params.id;
+    req.getConnection(function(err, connection){
+        if (err){ 
+            return next(err);//eFROM sales_history INNER JOIN purchase_history ON stock_item=item INNER JOIN product_sold ON product_name=item GROUP BY sales_history.stock_item ORDER BY profits DESC) AS prod_profits
+        }
+        console.log("----------------------------------------------------")
+        connection.query('insert into Appointment set ?', data, function(err, results) {
+            if (err) return next(err);
+            var appointid = results.insertId;
+
+        connection.query('select * from Appointment where appointment_id = ?', [appointid] , function(err, appointments) {
+            if (err) return next(err);
+
+            console.log(appointments);
+
+                res.render( 'appointment', {
+                    data : appointments[0]
+                });
+
+            });
+            });
+            
+        });
+    
+};
+
 exports.get_appointment = function(req, res, next){
     var data = JSON.parse(JSON.stringify(req.body));
     var id = req.params.id;

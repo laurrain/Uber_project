@@ -84,28 +84,29 @@ logo{ http://www.saintpetersblog.com/wp-content/uploads/2015/03/uber_seo_car.jpg
 </head>
 <body>
 
+  <table> 
+    <h2>Agent Received Driver Appointment</h2>
+    <thead>
+    <tr>
+      <th>Driver Name</th><th>Agent Name</th><th>Date</th><th>Rating</th><th>Driver E-mail</th>
+    </tr>
+    </thead>
+    {{#data}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{agent_name}}</td>
+      <td>{{date}}</td>
+      <td>{{rating}}</td>
+      <td>{{email}}</td>
+    </tr>
+    {{/data}}
+  </table>
 
-
-<div class="container">
-
-  <h2>Please fill out this short survey</h2>
-  <form method="POST">
-    <label for="name">Name:</label>
-    <input id="name" name="name" type="text">
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email">
-    <label for="comments">Thoughts:</label>
-    <textarea name="comments" id="comments" cols="25" rows="5"></textarea>
-    <a href:"feedback@Uber.com"></a>
-    <button type="submit">Submit</button>
-
-  </form>
-
-</div>
+<button onclick="location.href='/'" class="col-xs-3">
+          Back to Main Menu
+        </button>
 
 <script>
-  
-
   $('form').on('submit',function(){
   $(this).find('.message').remove();
   //  get each form input for validation
