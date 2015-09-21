@@ -133,7 +133,7 @@ exports.get_driver = function(req, res, next){
                 console.log("[!] Error requesting driver data from database:\n\t%s", err);
 
 
-            res.render("index",{username : data})
+            res.render("driver_handler",{username : data})
         })
     })
 }

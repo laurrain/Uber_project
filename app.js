@@ -57,28 +57,49 @@ app.get("/signup", function(req,res){
 })
 app.post('/signup', route.signup)
 
-/*app.get('/driver_handler/:username', function(req, res){
-  res.render('driver', username)
-})*/
+
+app.get('/driver_handler', function(req, res){
+  res.render('driver_handler', {data:route, layout: false})
+});
 
 app.get('/index', function(req, res){
   res.render('index', {data: route, layout: false, username : req.session.user})
   console.log("voila...")
-
+//var username = req.session.user;
+var usernames = {};
 var drivers_waiting = [];
 var conversations = {};
 
 io.on('connection', function(socket){
   console.log('a user connected');
-
-  socket.emit('connected');
+  // when the client emits 'sendchat', this listens and executes
+  socket.on('sendchat', function(data) {
+    // we tell the client to execute 'updatechat' with 2 parameters
+    io.sockets.emit('updatechat', socket.username, data);
+  });
+  socket.emit('connected',socket.username);
     socket.on('disconnect', function(msg){
       console.log('user disconnected');
       socket.emit('disconnected');
   });
+
+  // when the client emits 'adduser', this listens and executes
+  socket.on('adduser', function(username){
+    // we store the username in the socket session for this client
+    socket.username = username;
+    // add the client's username to the global list
+    usernames[username] = username;
+    // echo to client they've connected
+    socket.emit('updatechat', 'SERVER', 'you have connected');
+    // echo globally (all clients) that a person has connected
+    socket.broadcast.emit('updatechat', 'SERVER', username + ' has connected');
+    // update the list of users in chat, client-side
+    io.sockets.emit('updateusers', usernames);
+  });
+
   socket.on('chat message', function(msg){
-    console.log('message: ');
-    io.emit('chat message',"Attilaz"+" " +msg);
+    console.log('message:'+username);
+    io.emit('chat message'+username, msg)
   });
   socket.on('driver-waiting', function (message) {
     console.log('new driver waiting');
